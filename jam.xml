@@ -1,0 +1,24 @@
+<xs:element name="Book">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Title" type="xs:string" />
+            <xs:element name="Authors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Author" type="xs:string" maxOccurs="5"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Date" type="xs:gYear" />
+            <xs:element name="Publisher" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Springer" />
+                        <xs:enumeration value="MIT Press" />
+                        <xs:enumeration value="Harvard Press" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
