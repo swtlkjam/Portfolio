@@ -1,0 +1,149 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bg-images{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 0.1rem;
+    text-align: center;
+  }
+  
+.navbar {
+    background: #232a34;
+  }
+  
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+.navbar-nav {
+    text-align: center;
+    padding: 0.8rem 0 0.2rem 0;
+  }
+  
+.navbar-nav a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.1rem;
+  letter-spacing: 3px;
+  transition: 0.3s ease-in-out;
+  }
+  
+.navbar-nav a:hover {
+    color: coral;
+  }
+
+.banner {
+    color: #fff;
+  }
+  
+.banner-title {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  
+.banner p {
+    padding: 1rem 0 2rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 300;
+    word-spacing: 2px;
+  }
+  
+.banner form {
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.search-input {
+    font-size: 1.1rem;
+    width: 100%;
+    outline: 0;
+    padding: 0.6rem 0;
+    border: none;
+  }
+  
+.search-btn {
+    width: 40px;
+    font-size: 1.1rem;
+    border: none;
+    background: transparent;
+    outline: 0;
+    cursor: pointer;
+  }
+
+.search-btn i{
+    transition: 0.3s ease-in-out;
+}  
+
+.search-btn i:hover{
+  color: #FFBB5C;
+}
+  
+.cont {
+    margin: 60px 20px 0 20px;
+  }
+  
+.cont .heading {
+    width: 40%;
+    padding-bottom: 50px;
+  }
+  
+.cont .heading .h3 {
+    font-size: 3em;
+    font-weight: bolder;
+    color: #333;
+    padding-bottom: 10px;
+  }
+  
+.cont .heading h3 span {
+    font-weight: 100;
+  }
+ 
+.cont .box .columns img {
+    width: 100%;
+    padding-bottom: 15px;
+    border-radius: 10px;
+  } 
+  
+footer {
+    background-color: #27374D;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
