@@ -1,0 +1,101 @@
+<!-- 
+     Sanchez, Jamaica Ann B.  
+     BSIT - 3A
+     Activity 5: Form Validation Using Javascript   
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validating a Registration and Login Form Using Javascript</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" onsubmit="validateRegistrationForm(); return false;">
+            Username: <input type="text" id="username" required><br>
+            Email: <input type="email" id="email" required><br>
+            Password: <input type="password" id="password" required><br>
+            Confirm Password: <input type="password" id="cpassword" required><br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Login Form</h2>
+        <form id="loginForm" onsubmit="validateLoginForm(); return false;">
+            Email: <input type="email" id="lemail" required><br>
+            Password: <input type="password" id="lpassword" required><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+         const users = [];
+
+function validateRegistrationForm() {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const cpassword = document.getElementById("cpassword").value;
+
+    if (username.length < 3 || username.length > 15 || isUsernameTaken(username)) {
+        alert("Invalid username, Username between 3 and 15 characters");
+        return;
+    }
+
+    if (!isValidEmail(email) || isEmailTaken(email)) {
+        alert("Invalid email");
+        return;
+    }
+
+    if (password.length < 8 || password.length > 20 || password !== cpassword) {
+        alert("Invalid password or passwords do not match");
+        return;
+    }
+
+    users.push({ username, email, password });
+    alert("You have registered successfully!");
+}
+
+function validateLoginForm() {
+    const lemail = document.getElementById("lemail").value;
+    const lpassword = document.getElementById("lpassword").value;
+
+    if (!isValidEmail(lemail) || !isEmailTaken(lemail)) {
+        alert("Invalid email");
+        return;
+    }
+
+    const user = users.find(u => u.email === lemail);
+
+    if (!user || user.password !== lpassword) {
+        alert("Invalid password");
+        return;
+    }
+
+    alert("WELCOME " + user.username);
+}
+
+function isUsernameTaken(username) {
+    return users.some(user => user.username === username);
+}
+
+function isEmailTaken(email) {
+    return users.some(user => user.email === email);
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+    </script>
+
+</body>
+</html>
+
